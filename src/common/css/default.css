@@ -1,0 +1,59 @@
+.previewHeader{
+    padding: 15px;
+    text-align: right;
+}
+
+.previewHeader a{
+    background: #4684a1;
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+    border-radius: 3px;
+    font-size: 14px;
+
+}
+
+.previewIframeWrapper{
+    margin: 0;
+    /* background-color: green; */
+    border: 1px solid rgb(240, 240, 240);
+    padding: 10px;
+    min-height:calc(100vh - 4px);
+
+}
+
+.previewIframe{
+    border: 1px solid #ccc;
+    width: 100%;
+    /* height: 100%; */
+    height:calc(100vh - 4px);
+  /* width:calc(100vw - 4px); */
+  /* margin: 25px; */
+  box-shadow: #706e6e;
+  /* padding: 25px; */
+}
+
+.previewLoader{
+    text-align: center;
+    margin-top: 200px;
+}
+
+.previewLoader h4{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.previewLoader p{
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.previewSVGLoader{
+    max-width: 100px;
+    margin: 0 auto;
+}
+
+.previewSVGLoaderError svg{
+    /* width: 100%; */
+}
