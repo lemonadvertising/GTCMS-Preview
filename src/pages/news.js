@@ -3,16 +3,13 @@ import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image"
 const PostTemplate = ({ data }) => {
   const posts = data.allWpNews.edges;
-  console.log("post",posts)
-
+  
   return (
     <div className="container">
       <div className="row">
       {
         posts.map((data) => {
-            return <div className="col-4"><div className="card">
-            {/* <GatsbyImage image={data.node.featuredImage.node.gatsbyImage} /> */}
-            {/* {console.log("url", data)} */}
+            return <div className="col-4"><div className="card">   
             <div className="card-body">
               <h5 className="card-title">{data.node.title}</h5>
            

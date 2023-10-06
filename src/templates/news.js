@@ -11,10 +11,10 @@ const PostTemplate = ({ data }) => {
             
             <div className="row heroSection">
         <div className="col-md-12">
-            <h2>Main Title: {post.title}</h2>
+            <h2>Main Title: {post.title?post.title:""}</h2>
 
             <GatsbyImage
-              image={post.additional_fields.bannerImage.gatsbyImage}    
+              image={post.additional_fields.bannerImage.gatsbyImage?post.additional_fields.bannerImage.gatsbyImage:""}    
             />
             </div>
             </div>
@@ -24,13 +24,13 @@ const PostTemplate = ({ data }) => {
         <div className="row headerSection">
         <div className="col-md-10">
     
-      <h4>Short Title: {post.additional_fields.shortTitle}</h4>
-      <p>Short Descritpion: {post.additional_fields.shortDescription}</p>
+      <h4>Short Title: {post.additional_fields.shortTitle?post.additional_fields.shortTitle:""}</h4>
+      <p>Short Descritpion: {post.additional_fields.shortDescription?post.additional_fields.shortDescription:""}</p>
       </div>
 
       <div className="col-md-2">
             <GatsbyImage
-              image={post.featuredImage.node.gatsbyImage}    
+              image={post.featuredImage.node.gatsbyImage?post.featuredImage.node.gatsbyImage:""}    
             />
                 </div>
 
@@ -39,7 +39,7 @@ const PostTemplate = ({ data }) => {
    
         <div className="row bodySection">
             <div className="col-md-12">
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            <div dangerouslySetInnerHTML={{ __html: post.content?post.content:"" }} />
             </div>
 
             
