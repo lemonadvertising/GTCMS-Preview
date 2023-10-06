@@ -1,8 +1,20 @@
+
+.heroSection,
+.headerSection{
+margin-top: 25px;
+margin-bottom: 25px;
+}
+.heroSection img{
+    width: 100%;
+}
 .previewHeader{
     padding: 15px;
     text-align: right;
 }
 
+.card{
+    margin-top: 40px;
+}
 .previewHeader a{
     background: #4684a1;
     padding: 10px 15px;
