@@ -31,7 +31,7 @@ margin-bottom: 25px;
     /* background-color: green; */
     border: 1px solid rgb(240, 240, 240);
     padding: 10px;
-    min-height:calc(100vh - 4px);
+    min-height:calc(100vh - 54px);
 
 }
 
@@ -39,7 +39,7 @@ margin-bottom: 25px;
     border: 1px solid #ccc;
     width: 100%;
     /* height: 100%; */
-    height:calc(100vh - 4px);
+    height:calc(100vh - 54px);
   /* width:calc(100vw - 4px); */
   /* margin: 25px; */
   box-shadow: #706e6e;

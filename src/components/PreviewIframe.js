@@ -19,7 +19,7 @@ const IFrameComponent = ({ url }) => {
     };
 
     checkUrl();
-        if(reCheckUrl < 2){
+        if(reCheckUrl < 6){
           if(isValidUrl === false){
            setTimeout( () =>{
             setRecheckUrl(reCheckUrl+1)
