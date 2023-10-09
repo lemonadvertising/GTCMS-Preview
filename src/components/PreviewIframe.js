@@ -129,3 +129,64 @@ const IFrameComponent = ({ url }) => {
 };
 
 export default IFrameComponent;
+
+
+
+
+
+
+// import React from 'react';
+
+
+
+
+//   const getPlayLoaderSvg = () => {
+//     return <div> 
+//        <h4>Please wait, preview is building</h4>
+//       <div className='previewSVGLoader'>
+//       <svg version="1.1" id="L2"  x="0px" y="0px"
+//       viewBox="0 0 100 100" enable-background="new 0 0 100 100">
+//     <circle fill="none" stroke="#4684a1" stroke-width="4" stroke-miterlimit="10" cx="50" cy="50" r="48"/>
+//     <line fill="none" stroke-linecap="round" stroke="#4684a1" stroke-width="4" stroke-miterlimit="10" x1="50" y1="50" x2="85" y2="50.5">
+//       <animateTransform 
+//            attributeName="transform" 
+//            dur="2s"
+//            type="rotate"
+//            from="0 50 50"
+//            to="360 50 50"
+//            repeatCount="indefinite" />
+//     </line>
+//     <line fill="none" stroke-linecap="round" stroke="#4684a1" stroke-width="4" stroke-miterlimit="10" x1="50" y1="50" x2="49.5" y2="74">
+//       <animateTransform 
+//            attributeName="transform" 
+//            dur="15s"
+//            type="rotate"
+//            from="0 50 50"
+//            to="360 50 50"
+//            repeatCount="indefinite" />
+//     </line>
+//     </svg>
+    
+//     </div>
+//     <p>Hold On! We're Stitching Together Your Preview.</p>
+//     </div>
+//   }
+
+
+
+// const IFrameComponent = ({ webHookStatus, url }) => {
+//   return (
+//     <>
+
+//     {webHookStatus === "loading" ?
+//     getPlayLoaderSvg(): 
+//     webHookStatus ===  "success"?
+//      <iframe className='previewIframe' src={url} title="Example IFrame" width="600" height="400">
+// Your browser does not support iframes.
+// </iframe>: 
+//       webHookStatus ===  "error" ?
+//       getPlayLoaderSvg():""}
+//     </>
+//   );
+// }
+// export default IFrameComponent;
