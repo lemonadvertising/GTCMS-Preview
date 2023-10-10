@@ -1,17 +1,35 @@
 // In gatsby-node.js
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const posts = await graphql(`
+  let posts;
+  process.env.NODE_ENV === 'development' ?
+  posts = await graphql(`
     {        
-      allWpPost {
+      allWpPost{
         edges {
           node {
             slug
+            publishStatus {
+              status
+            }
           }
         }
       }
     }
-  `);
+  `) : posts = await graphql(`
+  {        
+    allWpPost(filter: {publishStatus: {status: {eq: "publish"}}}) {
+      edges {
+        node {
+          slug
+          publishStatus {
+            status
+          }
+        }
+      }
+    }
+  }
+`);
 
   if (posts.errors) {
     throw posts.errors;

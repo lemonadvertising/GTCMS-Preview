@@ -5,7 +5,9 @@
  * https://www.gatsbyjs.com/docs/gatsby-config/
  *
  */
-
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 module.exports = {
   /**
    * Adding plugins to this array adds them to your Gatsby site.

@@ -31,7 +31,7 @@ const previewUrl = mainUrl+"/"+postUrl+"/"
 
   useEffect(() => {
     // Replace this URL with the actual webhook endpoint you want to receive data from
-    const webhookEndpoint = 'https://gtpreview.lemonhq.io/__refresh';
+    const webhookEndpoint = 'https://4575-83-110-141-125.ngrok-free.app/__refresh';
 
     // You can use Axios or any other HTTP library to make a POST request to the webhook endpoint
     axios

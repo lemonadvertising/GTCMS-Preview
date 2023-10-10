@@ -1,11 +1,17 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image"
+import Layout from "../components/Layouts";
 const PostTemplate = ({ data }) => {
-  const posts = data.allWpPost.edges;
+  const posts = process.env.NODE_ENV === 'development' ? data.allWpPost.edges : data.allWpPost.edges.filter(
+      (edge) => edge.node.publishStatus.status === "publish"
+    );
+
+
   console.log("post",posts)
 
   return (
+    <Layout>
     <div className="container">
       <div className="row">
       {
@@ -15,9 +21,9 @@ const PostTemplate = ({ data }) => {
             {/* {console.log("url", data)} */}
             <div className="card-body">
               <h5 className="card-title">{data.node.title}</h5>
-              <span>{data.node.publishStatus.publishStatus}</span>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href={`/post${data.node.uri}`} className="btn btn-primary">Go somewhere</a>
+              <p className="postStatus">Post Status: <span className={data.node.publishStatus.status === "publish" ? "green" : "yellow"}>{data.node.publishStatus.status}</span></p>
+              <p className="card-text" dangerouslySetInnerHTML={{__html:data.node.content.substring(0,50)}} />
+              <Link to={`/post${data.node.uri}`} className="btn">Go somewhere</Link>
             </div>
           </div></div>
         })
@@ -25,6 +31,7 @@ const PostTemplate = ({ data }) => {
       </div>
 
     </div>
+    </Layout>
   );
 };
 // allWpPost(filter: {status: {in: ["draft"]}}) {
@@ -37,7 +44,7 @@ export const query = graphql`
           uri
           content
           publishStatus {
-            publishStatus
+            status
           }
           featuredImage {
             node {

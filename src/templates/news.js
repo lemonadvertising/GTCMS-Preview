@@ -1,21 +1,24 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image"
-
+import Layout from "../components/Layouts";
 const PostTemplate = ({ data }) => {
   const post = data.wpNews;
 
 
   return (
+    <Layout>
     <div className="container">
             
             <div className="row heroSection">
         <div className="col-md-12">
-            <h2>Main Title: {post.title?post.title:""}</h2>
+            
 
             <GatsbyImage
               image={post.additional_fields.bannerImage.gatsbyImage?post.additional_fields.bannerImage.gatsbyImage:""}    
             />
+
+<h2>{post.title?post.title:""}</h2>
             </div>
             </div>
 
@@ -23,9 +26,10 @@ const PostTemplate = ({ data }) => {
             
         <div className="row headerSection">
         <div className="col-md-10">
-    
-      <h4>Short Title: {post.additional_fields.shortTitle?post.additional_fields.shortTitle:""}</h4>
-      <p>Short Descritpion: {post.additional_fields.shortDescription?post.additional_fields.shortDescription:""}</p>
+        <div className="acfText">
+      <h4>{post.additional_fields.shortTitle?post.additional_fields.shortTitle:""}</h4>
+      <p>{post.additional_fields.shortDescription?post.additional_fields.shortDescription:""}</p>
+      </div>
       </div>
 
       <div className="col-md-2">
@@ -46,6 +50,7 @@ const PostTemplate = ({ data }) => {
        
       </div>
     </div>
+    </Layout>
   );
 };
 

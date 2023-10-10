@@ -1,12 +1,13 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image"
-
+import Layout from "../components/Layouts";
 const PostTemplate = ({ data }) => {
   const post = data.wpPost;
 
 
   return (
+    <Layout>
     <div className="container">
       <h1>{post.title}</h1>
       
@@ -25,6 +26,7 @@ const PostTemplate = ({ data }) => {
        
       </div>
     </div>
+    </Layout>
   );
 };
 
